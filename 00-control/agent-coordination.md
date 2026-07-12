@@ -49,6 +49,27 @@ After each substantial learning session:
 - add concise concept entries only when reusable across tracks
 - add a session snapshot if the session changed direction or introduced a major track
 
+## Concurrent Write Safety
+
+Assume another conversation may update the repository at any time.
+
+Before updating an existing file:
+
+1. fetch its latest content and SHA immediately before the write;
+2. inspect recent commits affecting the same track;
+3. preserve valid work from other agents;
+4. make the smallest coherent change;
+5. use the fetched SHA for optimistic concurrency.
+
+Additional rules:
+
+- prefer new dated files in `06-sessions/` for append-only history;
+- avoid turning one shared file into a high-frequency write hotspot;
+- never force-update a branch or overwrite unknown changes;
+- if a write fails because the file changed or already exists, re-read and merge semantically;
+- use lowercase kebab-case and track prefixes for new files;
+- do not silently delete, rename, or move files.
+
 ## File Roles
 
 - `00-control/` — coordination rules for agents and learning protocol
