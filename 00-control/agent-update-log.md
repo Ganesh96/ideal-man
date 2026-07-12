@@ -57,3 +57,28 @@ Purpose:
 Key coordination rule:
 
 Future agents should read `00-control/learning-protocol.md`, `00-control/agent-coordination.md`, relevant syllabus/progress files, retest queue, and concept ledger before continuing.
+
+## 2026-07-12 — Data engineering execution architecture added
+
+Added:
+
+- `01-syllabus/data-engineering-execution-plan.md`
+- `06-sessions/2026-07-12-data-engineering-learning-architecture-handoff.md`
+
+Updated:
+
+- `02-progress/data-engineering-progress.md`
+- `00-control/agent-coordination.md`
+
+Purpose:
+
+- preserve the 12-batch syllabus as the coverage index while adding an authoritative dependency and teaching overlay;
+- prioritize the high-impact Senior Data Engineer core: semantics, idempotency, Spark execution, Delta correctness, modeling, and operations;
+- route work across conversation, Pluralsight, Educosys, official documentation, labs, and GitHub according to medium fit;
+- define evidence-based mastery, metrics, cost reasoning, and architecture-reading passes;
+- set the current execution point to Block 0: data state and correctness;
+- add optimistic-concurrency rules because multiple conversations may write simultaneously.
+
+Coordination rule:
+
+Do not replace the original data engineering syllabus with the execution plan. Read both, then use the progress file and latest handoff to determine the next action.
