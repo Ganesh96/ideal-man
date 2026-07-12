@@ -29,20 +29,36 @@ Canonical execution order and channel rules: `01-syllabus/data-engineering-execu
 9. Bronze, Silver, and Gold guarantees;
 10. first PySpark and Delta implementation.
 
+## Pluralsight priority path
+
+Advisor recommendation accepted as the current course path:
+
+1. Apache Spark 3 Fundamentals — primary technical foundation.
+2. Delta Lake Essentials in Databricks — primary lakehouse correctness foundation.
+3. Up and Running with Databricks — platform context.
+4. Microsoft Fabric: First Look — ecosystem context.
+5. Develop a Data Model with Power BI — modeling/reporting context.
+
+Execution rule:
+
+- In the next 24-hour interview window, prioritize Spark fundamentals and Delta Lake.
+- Databricks, Fabric, and Power BI courses are skim-for-architecture unless time allows deeper practice.
+- Course completion is not mastery; mastery requires explaining, scenario design, and retesting.
+
 ## Progress table
 
 | Batch | Topic | Status | Confidence | Notes |
 |---|---|---:|---:|---|
 | 1 | Data platform mental model | In progress | Low | Current focus includes state, grain, correctness, OLTP/OLAP, lake/warehouse/lakehouse. |
-| 2 | Spark and PySpark foundations | Not started | Low | Driver/executors/partitions/lazy evaluation/shuffle. |
+| 2 | Spark and PySpark foundations | In progress | Low | Course path selected: Apache Spark 3 Fundamentals. Focus: driver/executors/partitions/lazy evaluation/shuffle/DataFrames. |
 | 3 | PySpark optimization | Not started | Low | Partitioning, skew, joins, file sizing, Spark UI. |
-| 4 | Delta Lake | Not started | Low | Transaction log, ACID, schema evolution, time travel. |
-| 5 | Databricks environment | Not started | Low | Notebooks, jobs, clusters, Git, secrets, monitoring. |
-| 6 | Microsoft Fabric fundamentals | Not started | Low | OneLake, lakehouse, warehouse, pipelines, dataflows. |
-| 7 | Fabric Lakehouse design | Not started | Low | Tables/files, SQL endpoint, medallion layers. |
-| 8 | Dataflows Gen2 | Not started | Low | Power Query, low-code transformations, destinations. |
-| 9 | Data Pipelines | Not started | Low | Activities, triggers, dependencies, retries. |
-| 10 | Warehouse modeling | Not started | Low | Facts, dimensions, grain, star schema, SCD. |
+| 4 | Delta Lake | In progress | Low | Course path selected: Delta Lake Essentials in Databricks. Focus: transaction log, ACID, schema evolution, time travel, MERGE. |
+| 5 | Databricks environment | Planned | Low | Course path selected: Up and Running with Databricks. Focus: notebooks, jobs, clusters, Git, secrets, monitoring. |
+| 6 | Microsoft Fabric fundamentals | Planned | Low | Course path selected: Microsoft Fabric First Look. Focus: OneLake, lakehouse, warehouse, pipelines, dataflows. |
+| 7 | Fabric Lakehouse design | Planned | Low | Tables/files, SQL endpoint, medallion layers. |
+| 8 | Dataflows Gen2 | Planned | Low | Power Query, low-code transformations, destinations. |
+| 9 | Data Pipelines | Planned | Low | Activities, triggers, dependencies, retries. |
+| 10 | Warehouse modeling | Planned | Low | Facts, dimensions, grain, star schema, SCD. Course path includes Power BI data modeling. |
 | 11 | Lakehouse architecture patterns | Not started | Low | Medallion, CDC, quality, idempotency, reprocessing. |
 | 12 | Interview synthesis | Not started | Low | Scenario answers and stakeholder communication. |
 
