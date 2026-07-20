@@ -82,3 +82,20 @@ Purpose:
 Coordination rule:
 
 Do not replace the original data engineering syllabus with the execution plan. Read both, then use the progress file and latest handoff to determine the next action.
+
+## 2026-07-20 — Canonical Senior Data Engineer role profile added
+
+Added:
+
+- `00-control/data-engineering-target-role.md`
+
+Purpose:
+
+- preserve the complete Senior Azure Databricks & Microsoft Fabric Data Engineer job target;
+- align teaching and mock interviews to enterprise delivery rather than generic tool familiarity;
+- record mandatory and supporting stack, senior capability expectations, likely interview dimensions, and regulated-domain implications;
+- establish the target evidence: design, implement, verify, operate, optimize, secure, deploy, support, and communicate an enterprise data platform.
+
+Coordination rule:
+
+Read the target-role profile before changing priorities for the data-engineering track. The execution plan still controls dependency order; the target-role profile controls role alignment and expected senior depth.
