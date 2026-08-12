@@ -99,3 +99,25 @@ Purpose:
 Coordination rule:
 
 Read the target-role profile before changing priorities for the data-engineering track. The execution plan still controls dependency order; the target-role profile controls role alignment and expected senior depth.
+
+## 2026-08-11 — Software Architecture: The Hard Parts becomes primary track
+
+Added:
+
+- `00-control/active-track.md`
+- `01-syllabus/software-architecture-hard-parts-learning-plan.md`
+- `02-progress/software-architecture-hard-parts-progress.md`
+- `04-drills/software-architecture-hard-parts-drills.md`
+- `06-sessions/2026-08-11-software-architecture-hard-parts-pivot.md`
+
+Purpose:
+
+- move the primary learning focus from short-term Eli Lilly interview preparation to durable software-architecture mastery;
+- use *Software Architecture: The Hard Parts* as the syllabus and trade-off decision-making spine;
+- integrate physical-notebook retrieval practice, decision maps, changed-constraint scenarios, homework, and delayed retesting;
+- use other decision/cognition books only as useful reasoning lenses, not forced analogies;
+- optimize source use by preferring uploaded Markdown/HTML for text retrieval, PDF for diagrams, and current official/web sources only for stale implementation-specific claims.
+
+Coordination rule:
+
+Read `00-control/active-track.md` before choosing the next track. Previous interview-prep files remain paused and must be preserved. The next action for the primary track is Chapter 1, Block 0: least-worst trade-offs, architecture vs design, ADRs, fitness functions, and the Sysops Squad baseline.
