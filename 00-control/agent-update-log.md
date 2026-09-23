@@ -121,3 +121,25 @@ Purpose:
 Coordination rule:
 
 Read `00-control/active-track.md` before choosing the next track. Previous interview-prep files remain paused and must be preserved. The next action for the primary track is Chapter 1, Block 0: least-worst trade-offs, architecture vs design, ADRs, fitness functions, and the Sysops Squad baseline.
+
+## 2026-09-23 — Source intake workflow added
+
+Added:
+
+- `00-control/source-intake-protocol.md`
+- `09-source-inbox/README.md`
+
+Updated:
+
+- `00-control/agent-coordination.md`
+- `README.md`
+
+Purpose:
+
+- create a single intake point for articles, posts, notes, PDFs, and images;
+- define extraction for embedded links and image text/diagrams;
+- preserve source claims separately from verification, inference, and unresolved questions;
+- expand material into prerequisites, trade-offs, failure modes, related concepts, and interview transfer;
+- route it into existing syllabus, concept, mistake, and drill files rather than accumulating passive summaries;
+- keep resume stories truthful and distinguish real experience from hypothetical practice scenarios;
+- align the README's primary-track summary with `00-control/active-track.md`.
