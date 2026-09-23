@@ -105,3 +105,21 @@ Use `07-question-maps/pagination-at-scale-case-study-2026-09-23.md`.
 ## Interview-report discipline
 
 Prepare a few truthful stories deeply rather than memorizing one anecdotal loop. For each story, identify your contribution, decision alternatives, stakeholder constraints, dead ends, evidence, and result. Confirm the actual target interview stages with the recruiter; do not infer transcription or scoring practices from an AI assistant being present.
+
+
+## Concept integration and .NET transfer
+
+Use the new [concept taxonomy](../07-question-maps/system-design-concept-taxonomy-2026-09-23.md) and [supplemental .NET checklist](../07-question-maps/dotnet-senior-developer-checklist-2026-09-23.md). Answer each with an explicit requirement, baseline, constraint, trade-off, failure path, and observable evidence.
+
+1. A service offers REST today. A product team asks for GraphQL and another service asks for gRPC. Identify the different consumers and contracts; decide whether one or multiple API styles fit, including auth, versioning, deadlines, pagination, and operational costs.
+2. A read endpoint is slow. Compare query-plan/index changes, connection-pool saturation, cache, read replica, materialized view, and search offload. What evidence distinguishes these bottlenecks, and which choices change freshness or write cost?
+3. A system must retain audit history, deliver async jobs, and support replay. Distinguish event sourcing, transactional outbox, message queue, and append-only log. Draw one design using only the necessary roles.
+4. A high-volume ASP.NET Core API has retries, autoscaling, and Kafka consumers but still falls behind. Diagnose dependency saturation, thread/connection pools, partition skew, backpressure, retry amplification, and arrival-versus-service rate before adding capacity.
+5. Explain CAP for a replicated key/value service during an actual network partition. State the concrete client behavior chosen and what happens when the partition heals; do not answer only “pick two.”
+6. A team wants microservices, a service mesh, and Kubernetes because a senior checklist includes them. Establish the current pain, team ownership, independent release need, scale boundary, and operational readiness. Propose the smallest design that satisfies the real constraint.
+7. For an image-upload API, design authorization, safe object upload, metadata persistence, async transforms, idempotent retries, serving/CDN policy, retention, and cleanup. State which work is synchronous and why.
+8. A .NET deployment overlaps old and new code during a schema migration. Design an expand/migrate/contract rollout, compatibility window, rollback behavior, and checks for data completeness.
+9. Netflix’s container article reports a low-level performance issue. Explain what measurements you would need before applying its remedy to another runtime or CPU fleet. Separate observed correlation, root-cause evidence, mitigation, and external validity.
+10. The source post claims “1,200+ bitrates” and “every service has a circuit breaker.” Rewrite each as a bounded, source-verifiable statement or remove it. What primary evidence would justify retaining the claim?
+11. Choose a claim from the .NET market post (“shows up in almost every listing,” etc.). Define a representative sample and date range that would make the claim testable, then replace it with a scoped observation.
+12. Prepare a real project story that touches one concept on the map. State only your contribution and scale that you can support; contrast it with a hypothetical design you have studied, if useful.
