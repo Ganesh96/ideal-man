@@ -2,31 +2,39 @@
 
 External learning ledger for interview preparation, technical mastery, and mistake-driven self-correction.
 
-This repository tracks preparation across backend, frontend, databases, LeetCode, system design, architecture, cloud, and data engineering.
+## Active goal
 
-## Operating Principle
+Transferable Software Engineer II interview readiness across coding, fundamentals, practical implementation, LLD, system design, behavioral/situational reasoning, and communication.
+
+Start with [the SE II Interview Training Program](01-syllabus/software-engineer-ii-interview-training-program.md) and [active track](00-control/active-track.md). Progress is evidence-based; topic collection alone does not count as mastery.
+
+## Key study assets
+
+- [Answer templates and cheat sheets](04-drills/se2-interview-answer-templates.md)
+- [Worked C# coding patterns](04-drills/se2-coding-patterns-worked-examples-2026-09-23.md)
+- [System design taxonomy](07-question-maps/system-design-concept-taxonomy-2026-09-23.md)
+- [Low-level design syllabus](07-question-maps/low-level-design-syllabus-and-cases-2026-09-23.md)
+- [Database selection map](07-question-maps/database-selection-decision-map-2026-09-23.md)
+- [Company overlay](08-targets/se2-company-overlay.md)
+- [Readiness tracker](02-progress/se2-interview-readiness.md)
+
+## Repository structure
+
+- `00-control/` — learning rules, active track, source intake protocol.
+- `01-syllabus/` — domain syllabi and dependency maps.
+- `02-progress/` — evidence-based progress.
+- `03-mistakes/` — mistake ledger and retest queue.
+- `04-drills/` — practice prompts, templates, and worked examples.
+- `05-concepts/` — reusable concepts.
+- `06-sessions/` — dated session logs.
+- `07-question-maps/` — question and decision maps.
+- `08-targets/` — role/company overlays.
+- `09-source-inbox/` — submitted links, text, PDFs, and images.
+
+## Source processing
+
+Submit material in [`09-source-inbox/README.md`](09-source-inbox/README.md). Follow [the intake protocol](00-control/source-intake-protocol.md): preserve provenance, extract text and images, separate source claims from verification/inference, connect concepts, then convert useful material into retrieval practice.
+
+## Operating principle
 
 Correction over collection. Depth over decoration. Practice over passive reading.
-
-## Main Structure
-
-- `00-control/` — operating rules, learning protocol, and current status.
-- `01-syllabus/` — domain syllabi and dependency maps.
-- `02-progress/` — current progress and confidence tracking.
-- `03-mistakes/` — mistake ledger and spaced retesting queue.
-- `04-drills/` — theory, interview, and coding-template drills.
-- `05-concepts/` — reusable concepts across domains.
-- `06-sessions/` — dated learning session logs.
-- `07-question-maps/` — question and doubt maps.
-- `08-targets/` — role- or interview-specific context.
-- `09-source-inbox/` — submitted links, notes, PDFs, and images for extraction.
-
-## Source Processing
-
-Submit material in [`09-source-inbox/README.md`](09-source-inbox/README.md). Process it using [`00-control/source-intake-protocol.md`](00-control/source-intake-protocol.md): extract links and image content, separate source claims from verification and inference, expand useful concepts, route them to study assets, and convert them into retrieval practice.
-
-## Current Primary Track
-
-Software Architecture: The Hard Parts. Previous interview-prep tracks are paused and retained for reuse.
-
-See `00-control/active-track.md` for current objectives and teaching approach.
