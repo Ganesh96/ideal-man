@@ -115,3 +115,19 @@ Practice each with requirements, rough load/data estimates, APIs, data model, cr
 - URL shortener / TinyURL; file storage and sync / Dropbox; photo/social feed / Instagram; video upload and playback / YouTube; chat / WhatsApp; rideshare / Uber; ticket inventory / Ticketmaster; food delivery; live streaming; search engine/ranking; payment service; notification service; rate limiter; logging pipeline; real-time leaderboard; news feed.
 
 The shortlink-only list also includes frontend system design. Add client state, caching, network failure, accessibility, performance budgets, API aggregation, and rollout/experiment behavior to the system boundary. Shortlinks are leads; source content remains unreviewed until opened.
+
+
+## Supplemental source intake: LLD, ML, protocols, and operations
+
+The captured shortlinks and screenshot transcriptions from the next intake batch are recorded in [LLD, interview guides, ML case studies, and architecture checklist](../09-source-inbox/2026-09-23-lld-interview-guides-ml-case-studies.md). The new [LLD map](./low-level-design-syllabus-and-cases-2026-09-23.md) and [ML case-study map](./real-world-ml-system-case-studies-2026-09-23.md) have separate practice paths.
+
+Use this supplemental cluster to connect concepts that are often conflated:
+
+- **Request path and protocol:** DNS, TLS/HTTPS, reverse proxy vs load balancer vs API gateway, REST vs GraphQL vs gRPC, Protobuf vs JSON, webhooks, versioning, WebSockets.
+- **Database and delivery:** SQL/NoSQL selection, ACID vs BASE, database types, indexes, connection pools, database caching, CDC, outbox, queues vs pub/sub, idempotency.
+- **Coordination and health:** service discovery, heartbeat vs health check, leader election/consensus, consistent hashing, retries, circuit breakers, backpressure and rate limits.
+- **Security and operations:** JWT validation, authentication vs authorization, CI/CD, observability, deployment rollouts, health probes, rollback and recovery.
+- **Low-level design:** object responsibilities, SOLID, patterns, UML, DI, testability and concurrency; see the separate LLD syllabus for depth.
+- **ML-enabled products:** fraud, recommendations, demand forecasts, churn, ranking, generative assistance, payment routing; see the ML case map. Public case write-ups are prompts to inspect, not complete blueprints.
+
+Prefer comparisons tied to a concrete request path or failure scenario over memorizing standalone definitions.
