@@ -48,7 +48,7 @@ C# types and object model; collections; exceptions; generics; delegates/events; 
 
 **Gate:** explain core mechanisms and trade-offs, implement small examples, and verify behavior with tests. Avoid slogans such as “all value types live on the stack.”
 
-See [ .NET syllabus ](./dotnet-backend-syllabus.md) and [ .NET theory drills ](../04-drills/dotnet-theory-drills.md).
+See [.NET syllabus](./dotnet-backend-syllabus.md) and [.NET theory drills](../04-drills/dotnet-theory-drills.md).
 
 ### Phase 2 — Data structures and algorithms
 
@@ -84,7 +84,7 @@ Cases: URL shortener; image upload; notification; rate limiter; feed; chat; book
 
 **Gate:** in a 45-minute design, clarify scope, estimate dominant load, propose a minimal baseline, trace critical paths, identify bottlenecks/failure recovery, name measurable signals, and defend an alternative.
 
-See [system design taxonomy](../07-question-maps/system-design-concept-taxonomy-2026-09-23.md), [question map](../07-question-maps/system-design-interview-question-map-2026-09-23.md), and [answer templates](../04-drills/se2-interview-answer-templates.md).
+See [system design taxonomy](../07-question-maps/system-design-concept-taxonomy-2026-09-23.md), [question map](../07-question-maps/system-design-interview-question-map-2026-09-23.md), the [worked URL shortener case](../04-drills/se2-system-design-worked-case-url-shortener.md), and [answer templates](../04-drills/se2-interview-answer-templates.md).
 
 ### Phase 6 — Behavioral and situational reasoning
 
@@ -92,7 +92,7 @@ Prepare true examples of ownership, disagreement, failure, ambiguity, learning, 
 
 For hypothetical situations, structure goal/constraints → risks → options → decision/communication → validation/escalation. Do not present an imagined event as personal experience.
 
-**Gate:** tell two or three distinct, truthful stories and handle follow-ups about decisions, evidence, and what you would change.
+**Gate:** tell two or three distinct, truthful stories and handle follow-ups about decisions, evidence, and what you would change. Use the [story-bank workbook](../04-drills/se2-behavioral-story-bank-workbook.md).
 
 ### Phase 7 — Mixed practice and company overlays
 
