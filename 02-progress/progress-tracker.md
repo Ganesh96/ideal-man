@@ -9,7 +9,11 @@
 - Interview Ready
 - Needs Retest
 
-## Current Track: .NET Backend
+## Current Track: SE II Interview Training
+
+The integrated program spans coding, practical implementation, LLD, system design, behavioral/situational reasoning, and communication. Use the [SE II readiness tracker](./se2-interview-readiness.md) for mock evidence and phase gates. The .NET table below is a module-level progress record, not the whole interview plan.
+
+## .NET module status
 
 | Batch | Topic Area | Status | Notes |
 |---|---|---:|---|
@@ -30,8 +34,8 @@
 
 ## Current Focus
 
-Batch 1: C# Foundation + OOP Foundation
+Run the baseline diagnostic in the [SE II readiness tracker](./se2-interview-readiness.md). The .NET Batch 1 status remains Introduced until tested.
 
 ## Next Action
 
-Continue heavy learning with Batch 2: Collections + Error Handling after Batch 1 is tested.
+Test Batch 1 foundations, then continue to Collections + Error Handling where gaps warrant it.
