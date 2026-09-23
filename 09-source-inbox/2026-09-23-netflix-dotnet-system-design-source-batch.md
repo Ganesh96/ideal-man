@@ -103,3 +103,29 @@ For practice, hypothetical projects are fine when clearly labeled as exercises. 
 - Organized 98-concept inventory: [system design concept taxonomy](../07-question-maps/system-design-concept-taxonomy-2026-09-23.md)
 - Image-derived and .NET supplemental syllabus: [senior .NET checklist map](../07-question-maps/dotnet-senior-developer-checklist-2026-09-23.md)
 - Apply the topics with scenario prompts in [architecture drills](../04-drills/software-architecture-hard-parts-drills.md)
+
+
+### Additional URLs extracted from the supplied Mount Mayhem write-up
+
+These are hyperlinks present in the user's supplied explanatory text. Inclusion records provenance; it does not imply endorsement or source validation.
+
+- Kubernetes — https://kubernetes.io/
+- Linux VFS docs — https://docs.kernel.org/filesystems/vfs.html
+- Linux NUMA docs — https://www.kernel.org/doc/html/v4.18/vm/numa.html
+- NUMA explainer — https://smithanjohn.medium.com/understanding-numa-non-unified-memory-access-4fcb9c493d2c
+- Linux mount API docs — https://docs.kernel.org/filesystems/mount_api.html
+- Global locks (community wiki) — https://meta.miraheze.org/wiki/Global_locks
+- AWS workload-aware computing — https://aws.amazon.com/blogs/hpc/a-scientific-approach-to-workload-aware-computing-on-aws/
+- Redis cache-coherence glossary — https://redis.io/glossary/cache-coherence/
+- Broadcom hyper-threading guidance — https://techdocs.broadcom.com/de/de/vmware-cis/cloud/vmware-cloud-on-aws/SaaS/performance-best-practices-for-vmc/esxi-and-virtual-machines/esxi-cpu-considerations/hyper-threading.html
+- Single-socket server announcement — https://www.engineering.com/supermicro-announces-single-socket-servers-for-data-centers/
+- AWS instance type overview — https://www.cloudzero.com/blog/aws-instance-types/
+- Kubernetes portability commentary — https://www.cdotrends.com/story/4644/kubernetes-promised-portability-so-why-are-so-many-locking-themselves
+- CNCF container runtimes explainer — https://www.cncf.io/blog/2019/07/15/demystifying-containers-part-ii-container-runtimes/
+- Pragmatic Engineer / Google newsletter page — https://newsletter.pragmaticengineer.com/p/google
+- Meta observability commentary — https://logz.io/blog/going-beyond-infrastructure-observability-meta/
+- eBPF — https://ebpf.io/
+- Brendan Gregg's perf resources — https://www.brendangregg.com/perf.html
+- Datadog flame graph guide — https://www.datadoghq.com/knowledge-center/distributed-tracing/flame-graph/
+
+Secondary explainers and vendor posts can help with orientation. For Linux behavior, validate with kernel documentation and the Netflix article; for a performance claim, prefer the experiment's actual methodology and measurements.
