@@ -234,3 +234,39 @@ For any case study, evaluate in this order:
 - What is the simplest design that meets the stated requirements?
 - What metric/fitness function would prove the decision is working?
 - What assumption, if changed, would reverse the decision?
+
+
+## Pagination over mutable aggregated data
+
+Read alongside `07-question-maps/pagination-at-scale-case-study-2026-09-23.md` and its source note. The Arcesium article is a concrete export-style workload, not a default pagination recipe.
+
+Core ideas to reason through:
+- Cursor/keyset pagination avoids large offsets, but correctness needs a deterministic sort key and explicit boundary behavior.
+- A multi-page traversal over changing records needs a snapshot contract. One approach is to pin every page to an as-of commit watermark and versioned rows.
+- Staging a large result to compressed columnar object storage can move repeat reads away from a hot transactional database; it adds first-page work, object lifecycle, security, and cleanup concerns.
+- `WITH TIES` can preserve a whole grouping boundary but may exceed the nominal chunk size; estimate the largest tie group.
+- Evaluate `NOLOCK` or any weak isolation only against the exact write/versioning protocol. A timestamp filter by itself does not prove snapshot correctness.
+- Measure first-page latency, continuation-page latency, whole-export completion, abandonment rate, object-store cost, and p95/p99 under realistic concurrency.
+
+## Write scaling and overload-control extension
+
+Read alongside `07-question-maps/system-design-principles-and-building-blocks-2026-09-23.md`.
+
+- First distinguish a steady capacity problem from a burst, hot key, lock contention, slow storage, or expensive transaction problem.
+- Vertical capacity, query/data-model work, batching, queueing, sharding, and datastore changes solve different constraints.
+- A queue buffers only finite work. Require a backlog-age objective, admission/backpressure behavior, idempotent processing, and a policy for sustained overload.
+- Partition keys must spread work while preserving access patterns and required transaction boundaries.
+- Replication, partitioning, and sharding are not interchangeable. Measure the read/write and correctness effects of each.
+- Autoscaling can lag demand and cannot exceed a dependency’s capacity ceiling.
+
+## Design heuristics and building-block selection
+
+Use the grouped source map rather than memorizing the original list as universal rules. In particular:
+- reason about latency on the critical path;
+- index by workload evidence, not selectivity alone;
+- use logs, metrics, and traces as complementary signals;
+- distinguish event stores from work queues;
+- treat dead-letter handling as a policy choice, while ensuring poison work is visible and recoverable;
+- decide among gateway, cache, queue, search, relational/NoSQL, and object storage only when requirements justify them.
+
+Source record: `09-source-inbox/2026-09-23-system-design-principles-and-write-scaling.md`.
