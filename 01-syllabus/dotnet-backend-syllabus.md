@@ -58,7 +58,9 @@ Topics:
 - polymorphism
 - abstraction
 
+## Supplemental study maps
 
-## Supplemental checklist
+- [Low-Level Design Syllabus and Case Bank](../07-question-maps/low-level-design-syllabus-and-cases-2026-09-23.md): object modeling, SOLID, patterns, UML, DI, testing, and interview cases. This complements the OOP and SOLID batches; it does not change the active batch order.
+- [Senior .NET Developer Checklist Map — 2026-09-23](../07-question-maps/dotnet-senior-developer-checklist-2026-09-23.md): image-derived, unvalidated production topics and prompts. Use it for gap analysis only; verify target-role needs before prioritizing cloud providers or specialized frameworks.
 
-See [Senior .NET Developer Checklist Map — 2026-09-23](../07-question-maps/dotnet-senior-developer-checklist-2026-09-23.md) for an image-derived, unvalidated list of production topics and interview prompts. It is a supplemental gap-analysis aid only; it does not alter the current batch or active learning track. Verify the target role’s actual requirements before prioritizing cloud providers or specialized frameworks.
+Related captured links and image transcriptions are in [the source inbox batch](../09-source-inbox/2026-09-23-lld-interview-guides-ml-case-studies.md).
