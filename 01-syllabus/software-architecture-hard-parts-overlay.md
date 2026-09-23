@@ -270,3 +270,19 @@ Use the grouped source map rather than memorizing the original list as universal
 - decide among gateway, cache, queue, search, relational/NoSQL, and object storage only when requirements justify them.
 
 Source record: `09-source-inbox/2026-09-23-system-design-principles-and-write-scaling.md`.
+
+
+## New source batch: broader concept map and .NET production checklist
+
+See [the 98-concept taxonomy](../07-question-maps/system-design-concept-taxonomy-2026-09-23.md), [the .NET checklist map](../07-question-maps/dotnet-senior-developer-checklist-2026-09-23.md), and [the source intake/claim triage](../09-source-inbox/2026-09-23-netflix-dotnet-system-design-source-batch.md).
+
+Study implications:
+- Use the concept list as a dependency map: qualities/workload → API/data contracts → transactions and query paths → consistency and failure handling → distributed scaling → specialized structures and analytics.
+- Do not equate product categories with single implementations. REST/GraphQL/gRPC, SQL/NoSQL, queues/pub-sub/logs, and replicas/partitions answer different questions and can coexist.
+- Build from a measurable workload and baseline. A component checklist or company case-study diagram is a prompt to ask about the use case, invariant, bottleneck, operating cost, failure path, and evidence.
+- The .NET checklist is supplemental role-gap material, not an update to the active track. Verify current target job postings; practice a narrow coherent stack rather than treating every cloud, database, and messaging product as mandatory.
+- Never transfer the source author's employer history, system scale, or claimed ownership into the learner's resume. For interview practice, separate hypothetical design exercises from truthful work examples.
+
+## Cross-layer performance case study: container mounts
+
+The linked Netflix post, *Mount Mayhem at Netflix*, is a source for a specific investigation into container startup, Linux mount behavior, and CPU topology. Read the primary article and kernel VFS/mount documentation before repeating exact counts or benchmark claims. Trace the evidence chain: workload → symptoms → profiling/measurement → contention hypothesis → mitigation → validation. Then ask whether the bottleneck exists in the target workload before applying the optimization. Do not infer that one CPU family, hyperthreading setting, or mount strategy is universally superior.
