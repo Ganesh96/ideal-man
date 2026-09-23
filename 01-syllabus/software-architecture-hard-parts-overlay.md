@@ -286,3 +286,10 @@ Study implications:
 ## Cross-layer performance case study: container mounts
 
 The linked Netflix post, *Mount Mayhem at Netflix*, is a source for a specific investigation into container startup, Linux mount behavior, and CPU topology. Read the primary article and kernel VFS/mount documentation before repeating exact counts or benchmark claims. Trace the evidence chain: workload → symptoms → profiling/measurement → contention hypothesis → mitigation → validation. Then ask whether the bottleneck exists in the target workload before applying the optimization. Do not infer that one CPU family, hyperthreading setting, or mount strategy is universally superior.
+
+
+## Interview source triage and deployment practice
+
+The latest link batch, deployment comparison, and three candidate-reported process accounts are recorded in [the source intake](../09-source-inbox/2026-09-23-system-design-practice-and-rollouts-source-batch.md), [the interview evidence map](../07-question-maps/interview-experience-evidence-map-2026-09-23.md), and [the deployment/system-design practice map](../07-question-maps/deployment-strategies-and-system-design-practice-2026-09-23.md).
+
+Treat the company interview reports as practice leads, not hiring policy. The deployment section distinguishes Kubernetes Deployment strategies from routing/experiment patterns and requires compatible schemas, rollout gates, traffic control, and tested recovery. A new topic link is not “learned” until its mechanism, failure modes, trade-off, and transfer case have been retrieved without the source.
