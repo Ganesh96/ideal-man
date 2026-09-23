@@ -57,3 +57,8 @@ Topics:
 - inheritance
 - polymorphism
 - abstraction
+
+
+## Supplemental checklist
+
+See [Senior .NET Developer Checklist Map — 2026-09-23](../07-question-maps/dotnet-senior-developer-checklist-2026-09-23.md) for an image-derived, unvalidated list of production topics and interview prompts. It is a supplemental gap-analysis aid only; it does not alter the current batch or active learning track. Verify the target role’s actual requirements before prioritizing cloud providers or specialized frameworks.
