@@ -82,3 +82,36 @@ Use the sequence to reduce working-memory load; it is not a ranking of interview
 5. Finally explore specialized structures, realtime protocols, vector search, and analytics according to the target role.
 
 For each mechanism explain: problem, operation, preconditions, trade-offs, failure mode, observable evidence, when not to use it, and a concrete example. Treat social-post slogans, company case-study numbers, and job-market claims as leads to verify, not as universal facts.
+
+
+## Additional topics surfaced by later interview-prep lists
+
+These extend the 98-term taxonomy with interview-specific mechanisms and case families. Learn by workload and invariant, not by memorizing every product example.
+
+### Cache policy and data models
+- LRU/LFU are eviction policies; choice depends on access distribution and metadata/update cost, not a universally superior policy.
+- Write-through, write-back/write-behind, and write-around describe cache/write-path strategies with different freshness, durability, and failure windows. Specify source of truth and recovery.
+- Relational, document, key-value, object/blob, search, vector, and analytical stores serve different access patterns. A label alone does not decide a datastore.
+
+### Delivery, coordination, and realtime APIs
+- At-least-once delivery implies consumer duplicates are possible; exactly-once claims must specify the boundary and external side effects.
+- Quorums, distributed locks, leases/fencing, consensus, and leader election have different guarantees and failure assumptions.
+- Compare WebSockets, Server-Sent Events, and long polling by directionality, connection lifetime, intermediary support, scale, reconnect behavior, and client needs.
+- Fanout-on-write versus fanout-on-read is a workload trade-off for feeds/notifications. Identify celebrity/hot-key skew, write amplification, freshness, and repair/rebuild paths.
+- Webhooks are asynchronous outbound API calls: define signing/authentication, retries, idempotent receiver, replay protection, ordering, subscription validation, and delivery visibility.
+- Actor-model message isolation does not automatically make a system distributed, durable, or horizontally scalable; locate mailbox state and supervision/recovery boundaries.
+- Protocol Buffers and JSON differ in schema/contracts, encoding, compatibility, inspectability, and tooling; compare measured end-to-end costs.
+
+### Production correctness and operations
+- Define SLOs as internal objectives and SLAs as externally meaningful agreements where applicable; state measurement windows and error-budget behavior.
+- Schema migrations and zero-downtime deployments require old/new code compatibility, phased expand/migrate/contract steps, backfill verification, and rollback boundaries.
+- Disaster recovery needs explicit RPO/RTO, region/AZ failure assumptions, restore tests, dependency maps, and cost constraints. Multi-AZ is not a substitute for regional recovery.
+- Track blast radius, hot partitions/keys, thundering herd, cold starts, queue age, and capacity headroom as workload/failure variables—not just glossary terms.
+- Secure password storage with a purpose-built, salted password-hashing/KDF scheme and current parameter guidance; a fast general-purpose hash is not appropriate. JWT is a signed/encoded claims format by default, not confidential encryption; validate issuer, audience, signature, expiry, and allowed algorithms.
+
+### Case-study bank from the submitted list
+
+Practice each with requirements, rough load/data estimates, APIs, data model, critical paths, bottleneck, failure/recovery, observability, and one reversible trade-off:
+- URL shortener / TinyURL; file storage and sync / Dropbox; photo/social feed / Instagram; video upload and playback / YouTube; chat / WhatsApp; rideshare / Uber; ticket inventory / Ticketmaster; food delivery; live streaming; search engine/ranking; payment service; notification service; rate limiter; logging pipeline; real-time leaderboard; news feed.
+
+The shortlink-only list also includes frontend system design. Add client state, caching, network failure, accessibility, performance budgets, API aggregation, and rollout/experiment behavior to the system boundary. Shortlinks are leads; source content remains unreviewed until opened.
