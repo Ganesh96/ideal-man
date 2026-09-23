@@ -123,3 +123,21 @@ Use the new [concept taxonomy](../07-question-maps/system-design-concept-taxonom
 10. The source post claims “1,200+ bitrates” and “every service has a circuit breaker.” Rewrite each as a bounded, source-verifiable statement or remove it. What primary evidence would justify retaining the claim?
 11. Choose a claim from the .NET market post (“shows up in almost every listing,” etc.). Define a representative sample and date range that would make the claim testable, then replace it with a scoped observation.
 12. Prepare a real project story that touches one concept on the map. State only your contribution and scale that you can support; contrast it with a hypothetical design you have studied, if useful.
+
+
+## Rollout, API, and case-study transfer
+
+Use [Deployment Strategies and System Design Practice](../07-question-maps/deployment-strategies-and-system-design-practice-2026-09-23.md), [Interview Experience Evidence Map](../07-question-maps/interview-experience-evidence-map-2026-09-23.md), and [Interview Practice Protocol](./interview-practice-protocol-2026-09-23.md).
+
+1. A rolling rollout has enough replicas on paper but users see errors. Diagnose readiness gates, maxUnavailable/maxSurge, capacity, connection draining, startup, and incompatible old/new versions. Define rollout stop conditions.
+2. Blue is healthy; green has a schema migration and a background consumer already writing data. Define what can safely roll back, what must be forward-fixed, and how to isolate duplicate side effects.
+3. A canary appears healthy for five minutes but fails for one region and one tenant. Design cohort selection, minimum sample/time thresholds, segmentation, guardrail metrics, and automatic halt/rollback.
+4. A shadow copy is used to test a payment API. Prevent real charges/refunds, protect sensitive fields, bound duplicated load, and compare results safely.
+5. A feed serves millions of followers for one celebrity account. Compare fanout-on-write, fanout-on-read, and hybrid strategies; reason about freshness, storage, hot keys, backfill, and a partial queue outage.
+6. A webhook receiver performs a payment update and sees duplicate deliveries. Design signature validation, idempotency, replay bounds, retryable errors, ordering, and audit evidence.
+7. A password database is leaked. Distinguish salted password hashing/KDF from encryption and general-purpose hashes; explain parameter upgrades and credential reset decisions without inventing a user's incident experience.
+8. A JWT-protected API accepts a token from the wrong audience. List validations and explain why decoding the token is not authenticating it.
+9. A multi-region service has a stated 10-minute RPO and 60-minute RTO. Design a recovery test and identify which availability-zone controls do not satisfy regional DR.
+10. Select one system from the concept map case-study bank. Design a minimal version first; add only the mechanism justified by an estimated bottleneck or invariant.
+11. In a 60-minute interview, the interviewer asks to deepen one component at minute 35. Explain what you defer, summarize the current design, and preserve time for failure handling and a clear close.
+12. Take one linked post title (Actor Model, Timsort, JWT, DNS, RPC, or Protobuf vs JSON). Before trusting its summary, state what authoritative source or executable experiment could verify its core mechanism.
