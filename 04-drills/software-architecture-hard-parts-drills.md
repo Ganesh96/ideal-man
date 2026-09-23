@@ -74,3 +74,34 @@ For every weak concept, create a later variant across at least two surfaces:
 - failure diagnosis;
 - ADR decision;
 - fitness-function design.
+
+
+## Pagination and point-in-time export
+
+Use `07-question-maps/pagination-at-scale-case-study-2026-09-23.md`.
+
+1. A client traverses 800 pages while new rows and corrections arrive. Define the snapshot contract and cursor fields so a retry or page-500 request does not silently observe a different dataset.
+2. A result exceeds one page. Compare repeated database reads, cursor pagination, and staging an immutable Parquet snapshot to object storage. Include first-page cost, page latency, abandonment, object expiry, authorization, and cleanup.
+3. One date contains more rows than the nominal extraction chunk. Explain why `WITH TIES` may help and how it changes upper-bound/capacity assumptions.
+4. The team uses `NOLOCK` and a commit watermark. What write-version invariants and predicates must hold before you believe the result excludes uncommitted or missing data?
+5. The LinkedIn post says “sub-second,” but the article benchmark reports a 1.322-second mean for one S3/DuckDB paginated-read measurement. What metric boundary and percentile evidence would you ask for before repeating the claim?
+
+## Write-heavy scaling
+
+1. A database sees 5x bursts for 10 minutes and lower traffic overnight. Which facts determine whether to queue writes, shed load, autoscale, or partition?
+2. Arrival rate stays above processing capacity for 30 minutes. Calculate backlog growth and time-to-capacity; explain why a queue alone cannot solve it.
+3. A user-ID shard key is balanced on average but one tenant produces 40% of writes. Compare tenant isolation, hot-key mitigation, and a compound key; include cross-tenant query cost.
+4. A team proposes “add replicas” to fix write throughput. Explain which read/write paths replication may improve and which write bottlenecks remain.
+5. Given an index, batch size, and partition change, define before/after correctness tests and p95/p99, throughput, and cost measures.
+
+## Heuristic and building-block evaluation
+
+1. Pick one “rule” such as “horizontal beats vertical” or “replication helps reads, partitioning helps writes.” Name the conditions where it holds, counterexamples, and a changed requirement that reverses it.
+2. A design checklist recommends all 11 components. Reduce it to the minimum set that meets a stated product requirement; name the failure mode or operational cost introduced by each chosen component.
+3. An interviewer says “Use Cassandra because writes are hard.” Respond by eliciting access patterns, consistency, transaction, partitioning, and operational constraints before selecting a store.
+4. Explain why an event store and a message queue are different roles. Show one valid design that uses both and one that needs neither.
+5. Trace one request in a production codebase from entry point through data mutation to tests and failure recovery. State only conclusions supported by the code or docs you inspected.
+
+## Interview-report discipline
+
+Prepare a few truthful stories deeply rather than memorizing one anecdotal loop. For each story, identify your contribution, decision alternatives, stakeholder constraints, dead ends, evidence, and result. Confirm the actual target interview stages with the recruiter; do not infer transcription or scoring practices from an AI assistant being present.
