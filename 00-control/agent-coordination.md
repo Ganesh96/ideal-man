@@ -40,6 +40,7 @@ Before major updates:
    - `02-progress/<track>-progress.md`
    - `04-drills/<track>-drills.md`
    - optionally `03-mistakes/<track>-mistakes.md` if mistakes become numerous.
+6. When processing source material, follow `00-control/source-intake-protocol.md` and preserve source provenance.
 
 After each substantial learning session:
 
@@ -73,12 +74,15 @@ Additional rules:
 ## File Roles
 
 - `00-control/` — coordination rules for agents and learning protocol
-- `01-syllabus/` — track-level syllabus and learning order
+- `01-syllabus/` — track-level syllabi and learning order
 - `02-progress/` — current state and confidence/progress markers
 - `03-mistakes/` — wrong assumptions, corrected models, and retest prompts
 - `04-drills/` — theory/interview/coding-template/system-design drills
 - `05-concepts/` — reusable concept ledger across tracks
 - `06-sessions/` — dated session summaries
+- `07-question-maps/` — question and doubt maps
+- `08-targets/` — role or interview-specific context
+- `09-source-inbox/` — source pointers submitted for extraction and processing
 
 ## Update Granularity
 
@@ -171,9 +175,10 @@ Any future LLM/agent should first read:
 
 1. `00-control/learning-protocol.md`
 2. `00-control/agent-coordination.md`
-3. relevant `01-syllabus/*`
-4. relevant `02-progress/*`
-5. `03-mistakes/retest-queue.md`
-6. `05-concepts/concept-ledger.md`
+3. `00-control/source-intake-protocol.md` when handling source material
+4. relevant `01-syllabus/*`
+5. relevant `02-progress/*`
+6. `03-mistakes/retest-queue.md`
+7. `05-concepts/concept-ledger.md`
 
 Then continue from the active track rather than restarting from scratch.
