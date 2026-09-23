@@ -26,6 +26,44 @@
 4. Define one measurable fitness function for availability and one for deployability.
 5. If an architecture decision has a good outcome, does that prove the decision process was good? Explain.
 
+## System-design question-map drills
+
+Use the grouped prompts in `07-question-maps/system-design-interview-question-map-2026-09-23.md`. Start with one data-correctness, one security, and one scale/reliability scenario. For each, state assumptions, baseline, trade-offs, failure path, and falsifying metric.
+
+1. A multi-tenant service has one very large tenant and frequent cross-tenant reports. Compare shared tables with tenant keys, schema-per-tenant, and database-per-tenant. What changes with isolation, cost, migrations, noisy neighbors, and query patterns?
+2. A database failover must lose no acknowledged writes. State the exact durability/RPO requirement, then compare synchronous replication and quorum/leader failover. What latency, availability, and split-brain risks follow?
+3. Traffic rises 100x for five minutes. Estimate request shape first. Design load shedding, queue bounds, rate limits, autoscaling, and graceful degradation; explain which controls respond too slowly.
+4. A NoSQL workflow must atomically update a profile, audit record, and search index. Which data belongs in one aggregate? Which can be derived asynchronously? Design idempotency, repair, and reconciliation.
+5. A service uses materialized aggregates but product now requires sub-second freshness. Compare incremental updates, stream processing, synchronous computation, and cached reads. State what freshness and correction guarantees are feasible.
+6. A security review finds a long-lived shared service credential in logs. Explain containment, rotation without downtime, workload identity/mTLS, authorization scope, and audit verification.
+
+## AI application architecture drills
+
+1. A support assistant must answer from frequently changing internal policies with per-user permissions. Compare RAG, fine-tuning, a deterministic search/UI, and a hybrid. Name the retrieval and authorization boundaries.
+2. A model change improves average score but doubles p95 latency and cost. What representative slices, quality floors, budgets, and rollout checks determine whether to ship it?
+3. Users report fabricated answers. Separate retrieval failure, stale source data, context truncation, model behavior, and product UX. Propose an evaluation and tracing plan.
+4. A RAG pipeline retrieves a document containing instructions to reveal secrets. Threat-model retrieval-time prompt injection and cross-tenant leakage; define controls and tests.
+5. An agent may create or refund payments through a tool. Define authorization, human approval, idempotency, retry limits, audit, and failure recovery. What must remain outside the model's authority?
+6. An interviewer asks `Why RAG instead of fine-tuning?` Answer conditionally: what objective, data freshness, update cadence, privacy, evaluation results, and operational costs make each option fit?
+7. What would make you select a smaller or cheaper model over the strongest available one? Define a task-specific evaluation set, minimum quality threshold, latency/cost budget, and fallback.
+
+## Coding and behavioral transfer
+
+These are practice surfaces drawn from anecdotal interview reports, not claims about a current company's hiring loop.
+
+- Extend a working parser after a new requirement arrives. Explain how you keep the design open to change without speculative abstractions.
+- Integrate a paginated API with rate limits and partial failures. Define retries, checkpointing, deduplication, and output validation.
+- Navigate an unfamiliar repository and debug a regression. State how you form hypotheses, narrow the fault, and verify the fix.
+- Review a slow or incorrect AI-generated patch. Find the smallest failing test, inspect assumptions, measure performance, and explain what you reject.
+- Prepare three truthful STAR stories that collectively cover leadership, conflict, failure, and achievement. For each, separate your contribution from the team's result and be ready to state evidence and limits.
+
+## Retrieval and practice rules
+
+- For each weak answer, record the mistaken assumption and retest in a different form later.
+- Do not convert an unverified company-scale anecdote into a design requirement.
+- Do not claim hands-on experience from a hypothetical exercise.
+- A strong answer explains when the proposed pattern is a poor fit.
+
 ## Retest Variants
 
 For every weak concept, create a later variant across at least two surfaces:
