@@ -81,7 +81,7 @@ Source: attached image `dcd089f2-0e42-447a-b115-08efc68f7f69.png`. Table text ex
 | --- | --- | --- | --- | --- |
 | 1 | Stripe | Prevent fraudulent transactions | How we built it: Stripe Radar | https://stripe.com/blog/how-we-built-it-stripe-radar |
 | 2 | Walmart | Recommend complementary items | Personalized ‘Complete the Look’ model | https://medium.com/walmartglobaltech/personalized-complete-the-look-model-ea093aba0b73 |
-| 3 | Uber | Forecast demand for airport rides | Demand and ETR Forecasting at Airports | https://www.uber.com/blog/demand-and-etr-forecasting-at-airports/ |
+| 3 | Uber | Forecast demand for airport rides | Demand and ETR Forecasting at Airports | https://www.uber.com/co/en/blog/demand-and-etr-forecasting-at-airports/ |
 | 4 | Pinterest | Prevent advertiser churn | An ML based approach to proactive advertiser churn prevention | https://medium.com/pinterest-engineering/an-ml-based-approach-to-proactive-advertiser-churn-prevention-3a7c0c335016 |
 | 5 | Stitch Fix | Generate ad headlines | A New Era of Creativity: Expert-in-the-loop Generative AI at Stitch Fix | https://multithreaded.stitchfix.com/blog/2023/03/06/expert-in-the-loop-generative-ai-at-stitch-fix/ |
 | 6 | Swiggy | Recommend items to order | Building a mind reader at Swiggy using Data Science | https://medium.com/swiggy-bytes/building-a-mind-reader-at-swiggy-using-data-science-5a5c38aa6c17 |
