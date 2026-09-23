@@ -12,6 +12,8 @@ Start with [the SE II Interview Training Program](01-syllabus/software-engineer-
 
 - [Answer templates and cheat sheets](04-drills/se2-interview-answer-templates.md)
 - [Worked C# coding patterns](04-drills/se2-coding-patterns-worked-examples-2026-09-23.md)
+- [Worked URL shortener system design](04-drills/se2-system-design-worked-case-url-shortener.md)
+- [Behavioral story bank workbook](04-drills/se2-behavioral-story-bank-workbook.md)
 - [System design taxonomy](07-question-maps/system-design-concept-taxonomy-2026-09-23.md)
 - [Low-level design syllabus](07-question-maps/low-level-design-syllabus-and-cases-2026-09-23.md)
 - [Database selection map](07-question-maps/database-selection-decision-map-2026-09-23.md)
