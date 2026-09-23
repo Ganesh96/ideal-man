@@ -170,6 +170,44 @@ Master:
 - distributed-system tax: network failures, observability, consistency, deployment, versioning, operations
 - organizational/team topology implications
 
+## AI application architecture extension
+
+Map to Ch 1 trade-off analysis and fitness functions; Ch 2 coupling; Ch 3 performance, availability, security; Ch 9-13 data ownership, workflows, and contracts. Use as an interview-transfer module, not a replacement for the book spine.
+
+### Design choices to reason about
+- **RAG** supplies external, changing, or access-controlled knowledge at request time. Evaluate ingestion freshness, chunking, embedding, retrieval recall, reranking, context assembly, citation/grounding, and permission filtering.
+- **Fine-tuning** changes model behavior for a repeated task, style, or output pattern. It is not a substitute for a current, permission-aware knowledge store.
+- **RAG and fine-tuning can be combined.** Choose based on the failure being addressed and representative evaluations, not slogans.
+- Model selection is a workload-specific decision across task quality, latency, token/context limits, cost, privacy, reliability, and tool support. Test on representative cases and hard negatives; do not decide from demos or release hype alone.
+- Agents/tool use add state, authorization, retries, side effects, and observability. Define tool permissions and approval boundaries; make retried effects idempotent where possible. Treat MCP as an integration protocol, not as a guarantee of safe or correct agent behavior.
+
+### Production qualities and failure modes
+- Measure task success, answer correctness/groundedness, retrieval quality, latency percentiles, tokens/cost, refusal behavior, and safety using a representative evaluation set.
+- Monitor prompt/model/index versions, retrieval results, tool calls, timeouts, retries, fallback paths, and user feedback while controlling sensitive-data exposure.
+- Test stale or missing retrieval, conflicting sources, prompt injection in retrieved content, unauthorized cross-tenant retrieval, provider failure, rate limits, and malformed/tool-generated outputs.
+- Add quality and latency budgets, safe fallbacks, traceability, access control, data-retention rules, and regression tests.
+- Demo success is not production evidence. An offline score alone also does not establish real-world quality.
+
+Interview transfer:
+- Why RAG, fine-tuning, both, or neither for this requirement?
+- What evidence changes the model choice?
+- Which failure is retrieval, model, prompt, tool, or product logic?
+- How do you evaluate a change before rollout and detect regressions after rollout?
+- What user data can enter prompts, logs, embeddings, or training data?
+- What happens when the model/provider is slow, unavailable, costly, or wrong?
+
+## HTTP QUERY update
+
+RFC 10008, *The HTTP QUERY Method*, is a June 2026 Standards Track Proposed Standard. QUERY is defined as safe and idempotent and can carry request content. The RFC makes QUERY responses cacheable, but a cache key must incorporate request content and related metadata; caching is more complex than for GET. Standardization does not imply uniform support in clients, gateways, proxies, or servers. Verify deployment support in the target stack before adopting it. Primary source: https://www.rfc-editor.org/rfc/rfc10008.html
+
+## Source cautions
+
+See `09-source-inbox/2026-09-23-system-design-ai-interview-source-batch.md` for the full link inventory and image extraction.
+- The post titled its series “25 concepts” but supplied 23.
+- Treat reported interview loops and prep-resource rankings as anecdotes or recommendations, not durable facts.
+- Verify company-scale numbers and technical claims in original engineering posts before using them in an answer.
+- Lists that sort patterns by career seniority mix different abstraction levels; reason from context, forces, and consequences.
+
 ## Cross-topic system-design reasoning order
 For any case study, evaluate in this order:
 1. Functional requirements and invariants
