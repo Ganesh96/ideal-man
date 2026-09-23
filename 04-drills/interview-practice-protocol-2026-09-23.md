@@ -1,6 +1,6 @@
 # Interview Practice Protocol — 2026-09-23
 
-Purpose: train recall, reasoning, and explanation instead of collecting memorized solutions. Supplemental to the retained interview-prep track; it does not replace the current architecture-book track.
+Purpose: train recall, reasoning, and explanation instead of collecting memorized solutions. This protocol supports the active [SE II interview program](../01-syllabus/software-engineer-ii-interview-training-program.md).
 
 ## Unseen coding problems
 
@@ -27,3 +27,8 @@ Use only real events. Prepare situation/task, your actions, alternatives/dead en
 ## After-action notes
 
 Record problem/date, what you tried before lookup, mistaken assumption, correctness verification, explanation clarity, and one retest date/variant. Watched videos and read solutions do not count as solved problems. A concept is stable when you can reconstruct and transfer it without the source.
+
+
+## Shared answer tools
+
+Use the [answer templates and cheat sheets](./se2-interview-answer-templates.md), [worked coding patterns](./se2-coding-patterns-worked-examples-2026-09-23.md), [worked URL shortener case](./se2-system-design-worked-case-url-shortener.md), and [behavioral story workbook](./se2-behavioral-story-bank-workbook.md). Record mock evidence in [the SE II readiness tracker](../02-progress/se2-interview-readiness.md).
