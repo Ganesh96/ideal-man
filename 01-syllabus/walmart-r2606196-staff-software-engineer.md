@@ -364,7 +364,156 @@ The role centers on platform engineering, cloud integration, safe technology cha
 
 ---
 
-# Track 8 — Change Engineering and Enterprise Operations
+# Track 8 — Application, API, Cloud, and Supply-Chain Security
+
+Security is part of backend correctness, not a separate specialist topic. The goal is to design services that preserve confidentiality, integrity, availability, authorization boundaries, auditability, and recoverability under realistic misuse and compromise.
+
+## P0 — Backend engineer must know deeply
+
+### Threat modeling and architecture
+- threat modeling: assets, actors, entry points, abuse cases, mitigations
+- attack surface
+- trust boundaries
+- least privilege
+- defense in depth
+- blast radius
+- secure defaults and fail-closed vs fail-open decisions
+- authentication vs authorization
+- authorization at service, resource, and data boundaries
+- broken object-level authorization / IDOR
+- multi-tenant isolation
+- network segmentation and zero-trust principles
+
+### Identity, authentication, and credentials
+- OAuth 2.x roles and flows at a conceptual/implementation level
+- OpenID Connect and how it differs from OAuth
+- access token vs ID token
+- session management, cookies, expiry, revocation, rotation
+- JWT validation pitfalls: issuer, audience, signature, algorithm, expiry, key rotation, over-trusting claims
+- MFA and phishing-resistant authentication
+- understand why SMS-based MFA is weaker than authenticator/passkey/security-key approaches: SIM-swap, interception, and phishing exposure
+- passkeys/WebAuthn conceptually; backend challenge/origin/credential lifecycle responsibilities
+- password storage: salts, adaptive hashing, bcrypt/Argon2; never reversible encryption for passwords
+- short-lived credentials
+- IAM roles/workload identities vs static access keys
+- secrets management; no credentials in code, images, logs, or source control
+- credential/key rotation
+
+### API and input security
+- validate and constrain untrusted input
+- SQL injection
+- command injection
+- prompt injection when LLM/tool systems are involved
+- SSRF
+- unsafe deserialization / parser boundary awareness
+- rate limiting and abuse controls
+- CORS: browser-origin policy, not authentication or authorization
+- webhook authentication/signatures and replay protection
+- secure file upload boundaries where applicable
+- API gateway security responsibilities vs service-owned authorization
+
+### Transport and data protection
+- TLS: what it protects and what it does not
+- certificate chain / hostname validation at a practical level
+- encryption in transit vs encryption at rest
+- key ownership and rotation
+- sensitive-data classification
+- avoid leaking secrets/PII through logs, traces, exceptions, analytics, or model prompts
+
+### Secure operations
+- audit logs: who/what/when/outcome, tamper resistance, access control, retention
+- prevention vs detection
+- security monitoring and actionable alerts
+- incident response fundamentals: detect -> contain -> eradicate -> recover -> learn
+- patch management
+- backup/restore strategy
+- prove backups through restoration tests; a backup that has never been restored is an unverified recovery mechanism
+- RTO/RPO and recovery access controls
+
+## P1 — Important supporting knowledge
+
+### Browser-facing security
+- XSS: stored/reflected/DOM concepts and backend encoding/content-handling responsibility
+- CSRF: when cookie-based authentication creates risk; SameSite/CSRF-token concepts
+- security headers, especially Content-Security-Policy
+- cookie attributes: Secure, HttpOnly, SameSite
+- CORS configuration and preflight behavior
+
+### Software supply chain
+- dependency provenance and supply-chain attacks
+- lockfiles and dependency pinning
+- controlled dependency upgrades
+- vulnerability scanning
+- SBOM purpose
+- signed artifacts/provenance concepts
+- CI/CD credential isolation
+- branch/review/build gates
+- avoid secrets in build logs and artifacts
+
+### Container and workload isolation
+- minimal/base-image hygiene
+- non-root containers
+- image scanning and patching
+- read-only filesystems / dropped capabilities where practical
+- secrets injected at runtime rather than baked into images
+- Kubernetes/service-account/RBAC concepts
+- sandboxing and isolation boundaries
+- host/container boundary awareness
+
+### Vulnerability and risk triage
+- CVE vs CVSS
+- CVSS is severity context, not a complete business-risk decision
+- exploitability, reachability, asset criticality, exposure, and compensating controls
+- remediation prioritization
+
+## P2 — Know conceptually; do not over-invest for backend interview prep
+- phishing and social engineering patterns
+- detailed WebAuthn cryptography
+- PKI internals beyond practical certificate/TLS debugging
+- advanced exploit development
+- security-operations tooling internals unless the role specifically asks for them
+
+## Security reasoning loop for backend/system design
+
+For every externally reachable component ask:
+1. What asset/state am I protecting?
+2. Who is the caller and how is identity established?
+3. What exactly is the caller authorized to do?
+4. Where are the trust boundaries?
+5. Which inputs are untrusted?
+6. What happens if a credential/token is stolen?
+7. What happens if a downstream dependency is malicious or compromised?
+8. What is logged, and could logs themselves leak sensitive data?
+9. Can abuse exhaust CPU, memory, DB connections, queues, or external-provider quota?
+10. What is the smallest blast radius if this service is compromised?
+11. How are keys/secrets rotated?
+12. How do we detect abuse/compromise?
+13. How do we recover and prove recovery works?
+
+## Interview/application cases
+- Design secure authentication/authorization for a multi-tenant API.
+- A user changes /users/123 to /users/124 and sees someone else's record. Identify the failure and fix the authorization model.
+- Design a webhook consumer that is safe under spoofing and replay.
+- A service on AWS needs database credentials. Compare static keys/passwords with IAM/workload identity and short-lived credentials.
+- A backend fetches user-supplied URLs. Analyze SSRF risk.
+- Design a secure file-upload or document-processing pipeline.
+- Design rate limiting that protects both users and downstream capacity.
+- An API uses JWTs. Explain validation, revocation/expiry trade-offs, key rotation, and why JWT does not eliminate server-side authorization.
+- A container image contains a critical CVE. Explain how severity, reachability, exploitability, exposure, and rollback affect the decision.
+- Your backups succeed nightly. Explain how you know you can actually recover.
+
+## Cross-links to other tracks
+- Track 1: retries/idempotency can become abuse surfaces; event consumers require authorization/trust assumptions.
+- Track 2: contracts must define authentication, authorization context, sensitive fields, and webhook integrity.
+- Track 3: security detection uses the same logs/metrics/traces but with stronger retention/access/tamper considerations.
+- Track 6: prompt injection, tool authorization, data leakage, retrieval poisoning, and deterministic permission boundaries.
+- Track 7: IAM, secrets, container hardening, CI/CD supply chain, deployment credentials.
+- Track 9/10: change risk, audit evidence, blast radius, rollback, and patching.
+- System design: security requirements are first-class non-functional requirements, not a final checklist.
+
+---
+
+# Track 9 — Change Engineering and Enterprise Operations
 
 This is the domain-specific gap to close because the Walmart team is Change Engineering.
 
@@ -405,7 +554,7 @@ Design an enterprise Change Intelligence Platform:
 
 ---
 
-# Track 9 — System Design
+# Track 10 — System Design
 
 ## Core designs
 1. Distributed rate limiter
@@ -438,7 +587,7 @@ Design an enterprise Change Intelligence Platform:
 
 ---
 
-# Track 10 — Coding and Problem Solving
+# Track 11 — Coding and Problem Solving
 
 The exact Walmart interview sequence is not assumed here; coding remains a core Staff SWE capability.
 
@@ -476,7 +625,7 @@ The goal is not memorized solutions; it is controlled reasoning and proof.
 
 ---
 
-# Track 11 — Resume Project Deep Dives
+# Track 12 — Resume Project Deep Dives
 
 ## A. University of Florida
 Prepare:
@@ -542,7 +691,7 @@ Prepare:
 
 ---
 
-# Track 12 — Staff-Level Leadership and Situational Judgment
+# Track 13 — Staff-Level Leadership and Situational Judgment
 
 ## Themes
 - technical direction
